@@ -1,4 +1,4 @@
-# Macoscope Objective-C Style Guide
+# Forked from Macoscope Objective-C Style Guide
 
 This style guide describes a set of basic rules that we follow here at [Macoscope](http://macoscope.com). We strive to write better code every day, and we believe this document outlines the best practices that will help you do the same.
 
