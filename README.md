@@ -477,38 +477,38 @@ The physical files should be kept in sync with the Xcode project files in order 
 When possible, always turn on “Treat Warnings as Errors” in the target’s Build Settings and enable as many [additional warnings](http://boredzo.org/blog/archives/2009-11-07/warnings) as possible. If you need to ignore a specific warning, use [Clang’s pragma feature](http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas).
 
 
-1. ApplicationViewControllers
-    a. SampleViewController .swift/.h+.m
-        i. SettingViewController .swift/.h+.m
-        ii. Trasitions
-        iii. Views
-        iv. Cells
-    b. Settings
-        i. SettingViewController
-            1. SettingViewController .swift/.h+.m
-            2. Views
-            3. Cells
-        ii. SettingTwoViewController
-            1. SettingTwoViewController .swift/.h+.m
-            2. Views
-            3. Cells
-2. GenericViewControllers
-    a. BaseViewController
-        i. BaseViewController .swift/.h+.m
-        ii. Views
-        iii. Cells
-3. GenericViews
-    a. RoundedView
-        i. RoundedView .swift/.h+.m
-4. GenericObjects
-5. Networking
-    a. API
-    b. Sockets
-6. Data Base
-7. Helpers
-    a. Categories
-    b. Extensions
-    c. Libraries
-8. Supporting Files
-    a. Fonts
-9. Resources
+* ApplicationViewControllers
+    * SampleViewController .swift/.h+.m
+        * SettingViewController .swift/.h+.m
+        * Trasitions
+        * Views
+        * Cells
+    * Settings
+        * SettingViewController
+            * SettingViewController .swift/.h+.m
+            * Views
+            * Cells
+        * SettingTwoViewController
+            * SettingTwoViewController .swift/.h+.m
+            * Views
+            * Cells
+* GenericViewControllers
+    * BaseViewController
+        * BaseViewController .swift/.h+.m
+        * Views
+        * Cells
+* GenericViews
+    * RoundedView
+        * RoundedView .swift/.h+.m
+* GenericObjects
+* Networking
+    * API
+    * Sockets
+* Data Base
+* Helpers
+    * Categories
+    * Extensions
+    * Libraries
+* Supporting Files
+    * Fonts
+* Resources
