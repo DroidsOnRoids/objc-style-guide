@@ -1,6 +1,6 @@
 # DroidsOnRoids Objective-C Style Guide
 
-This style guide outlines the coding conventions of the iOS teams at Droids On Roids. We welcome your feedback in 
+This style guide outlines the coding conventions of the iOS teams at Droids On Roids. 
 
 ## Introduction
 
