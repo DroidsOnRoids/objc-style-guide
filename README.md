@@ -154,14 +154,14 @@ Variables should be named descriptively, with the variable’s name clearly comm
 
 Single letter variable names should be avoided except as simple counter variables in loops.
 
-Asterisks indicating a type is a pointer should be “attached to” the variable name. **For example,** `NSString *text` **not** `NSString* text` or `NSString * text`, except in the case of constants (`NSString * const NYTConstantString`).
+Asterisks indicating a type is a pointer should be “attached to” the variable name. **For example,** `NSString *text` **not** `NSString* text` or `NSString * text`, except in the case of constants (`NSString * const DORConstantString`).
 
 Property definitions should be used in place of naked instance variables whenever possible. Direct instance variable access should be avoided except in initializer methods (`init`, `initWithCoder:`, etc…), `dealloc` methods and within custom setters and getters. For more information, see [Apple’s docs on using accessor methods in initializer methods and `dealloc`](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW6).
 
 **For example:**
 
 ```objc
-@interface NYTSection: NSObject
+@interface DORSection: NSObject
 
 @property (nonatomic) NSString *headline;
 
@@ -171,7 +171,7 @@ Property definitions should be used in place of naked instance variables wheneve
 **Not:**
 
 ```objc
-@interface NYTSection : NSObject {
+@interface DORSection : NSObject {
     NSString *headline;
 }
 ```
@@ -198,12 +198,12 @@ UIButton *settingsButton;
 UIButton *setBut;
 ```
 
-A three letter prefix (e.g., `NYT`) should always be used for class names and constants, however may be omitted for Core Data entity names. Constants should be camel-case with all words capitalized and prefixed by the related class name for clarity. A two letter prefix (e.g., `NS`) is [reserved for use by Apple](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/DefiningClasses/DefiningClasses.html#//apple_ref/doc/uid/TP40011210-CH3-SW12).
+A three letter prefix (e.g., `DOR`) should always be used for class names and constants, however may be omitted for Core Data entity names. Constants should be camel-case with all words capitalized and prefixed by the related class name for clarity. A two letter prefix (e.g., `NS`) is [reserved for use by Apple](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/DefiningClasses/DefiningClasses.html#//apple_ref/doc/uid/TP40011210-CH3-SW12).
 
 **For example:**
 
 ```objc
-static const NSTimeInterval NYTArticleViewControllerNavigationFadeAnimationDuration = 0.3;
+static const NSTimeInterval DORArticleViewControllerNavigationFadeAnimationDuration = 0.3;
 ```
 
 **Not:**
@@ -235,15 +235,15 @@ Categories may be used to concisely segment functionality and should be named to
 **For example:**
 
 ```objc
-@interface UIViewController (NYTMediaPlaying)
+@interface UIViewController (DORMediaPlaying)
 @interface NSString (NSStringEncodingDetection)
 ```
 
 **Not:**
 
 ```objc
-@interface NYTAdvertisement (private)
-@interface NSString (NYTAdditions)
+@interface DORAdvertisement (private)
+@interface NSString (DORAdditions)
 ```
 
 ## Comments
@@ -326,9 +326,9 @@ Constants are preferred over in-line string literals or numbers, as they allow f
 **For example:**
 
 ```objc
-static NSString * const NYTAboutViewControllerCompanyName = @"Droids On Roids";
+static NSString * const DORAboutViewControllerCompanyName = @"Droids On Roids";
 
-static const CGFloat NYTImageThumbnailHeight = 50.0;
+static const CGFloat DORImageThumbnailHeight = 50.0;
 ```
 
 **Not:**
@@ -346,9 +346,9 @@ When using `enum`s, use the new fixed underlying type specification, which provi
 **Example:**
 
 ```objc
-typedef NS_ENUM(NSInteger, NYTAdRequestState) {
-    NYTAdRequestStateInactive,
-    NYTAdRequestStateLoading
+typedef NS_ENUM(NSInteger, DORAdRequestState) {
+    DORAdRequestStateInactive,
+    DORAdRequestStateLoading
 };
 ```
 
@@ -359,11 +359,11 @@ When working with bitmasks, use the `NS_OPTIONS` macro.
 **Example:**
 
 ```objc
-typedef NS_OPTIONS(NSUInteger, NYTAdCategory) {
-  NYTAdCategoryAutos      = 1 << 0,
-  NYTAdCategoryJobs       = 1 << 1,
-  NYTAdCategoryRealState  = 1 << 2,
-  NYTAdCategoryTechnology = 1 << 3
+typedef NS_OPTIONS(NSUInteger, DORAdCategory) {
+  DORAdCategoryAutos      = 1 << 0,
+  DORAdCategoryJobs       = 1 << 1,
+  DORAdCategoryRealState  = 1 << 2,
+  DORAdCategoryTechnology = 1 << 3
 };
 ```
 
@@ -374,7 +374,7 @@ Private properties should be declared in class extensions (anonymous categories)
 **For example:**
 
 ```objc
-@interface NYTAdvertisement ()
+@interface DORAdvertisement ()
 
 @property (strong, nonatomic) GADBannerView *googleAdView;
 @property (strong, nonatomic) ADBannerView *iAdView;
@@ -460,11 +460,11 @@ Note: For modules use the [@import](http://clang.llvm.org/docs/Modules.html#usin
 @import QuartzCore;
 
 // Models
-#import "NYTUser.h"
+#import "DORUser.h"
 
 // Views
-#import "NYTButton.h"
-#import "NYTUserView.h"
+#import "DORButton.h"
+#import "DORUserView.h"
 ```
 
 ## Xcode project
