@@ -4,12 +4,10 @@ This style guide outlines the coding conventions of the iOS teams at Droids On R
 
 ## Introduction
 
-Here are some of the documents from Apple that informed the style guide. If something isn’t mentioned here, it’s probably covered in great detail in one of these:
+Our style is based on NYTimes Style Guide with some changes of ours. Here you can get link for NYTimes style:
 
-* [The Objective-C Programming Language](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
-* [Cocoa Fundamentals Guide](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CocoaFundamentals/Introduction/Introduction.html)
-* [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)
-* [iOS App Programming Guide](http://developer.apple.com/library/ios/#documentation/iphone/conceptual/iphoneosprogrammingguide/Introduction/Introduction.html)
+* [NYTimes Objective-C Style Guide](https://github.com/NYTimes/objective-c-style-guide#nytimes-objective-c-style-guide)
+
 
 ## Table of Contents
 
@@ -55,7 +53,7 @@ UIApplication.sharedApplication.delegate;
 ## Spacing
 
 * Indent using 4 spaces. Never indent with tabs. Be sure to set this preference in Xcode.
-* Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
+* Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement, remember to place a space between statement and brace but close on a new line. There should be a space between `if` and `condition`
 
 **For example:**
 ```objc
