@@ -214,19 +214,8 @@ static const NSTimeInterval fadetime = 1.7;
 
 Properties and local variables should be camel-case with the leading word being lowercase.
 
-Instance variables should be camel-case with the leading word being lowercase, and should be prefixed with an underscore. This is consistent with instance variables synthesized automatically by LLVM. **If LLVM can synthesize the variable automatically, then let it.**
+Instance variables should be camel-case with the leading word being lowercase, and should be prefixed with an underscore.
 
-**For example:**
-
-```objc
-@synthesize descriptiveVariableName = _descriptiveVariableName;
-```
-
-**Not:**
-
-```objc
-id varnm;
-```
 
 ### Categories
 
@@ -264,7 +253,6 @@ Block comments should generally be avoided, as code should be as self-documentin
     if (self) {
         // Custom initialization
     }
-
     return self;
 }
 ```
@@ -350,6 +338,21 @@ typedef NS_ENUM(NSInteger, DORAdRequestState) {
     DORAdRequestStateInactive,
     DORAdRequestStateLoading
 };
+```
+
+**NOT:**
+
+```C
+typedef enum {
+DORAdRequestStateInactive = 1,
+DORAdRequestStateLoading = 2
+} DORAdRequestState;
+
+enum {
+DORAdRequestStateInactive = 1,
+DORAdRequestStateLoading = 2
+};
+typedef NSUInteger DORAdRequestState;
 ```
 
 ## Bitmasks
@@ -441,7 +444,7 @@ Singleton objects should use a thread-safe pattern for creating their shared ins
 
    static dispatch_once_t onceToken;
    dispatch_once(&onceToken, ^{
-      sharedInstance = [[[self class] alloc] init];
+      sharedInstance = [[self class] new];
    });
 
    return sharedInstance;
@@ -473,15 +476,39 @@ The physical files should be kept in sync with the Xcode project files in order 
 
 When possible, always turn on “Treat Warnings as Errors” in the target’s Build Settings and enable as many [additional warnings](http://boredzo.org/blog/archives/2009-11-07/warnings) as possible. If you need to ignore a specific warning, use [Clang’s pragma feature](http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas).
 
-# Other Objective-C Style Guides
 
-If ours doesn’t fit your tastes, have a look at some other style guides:
-
-* [Google](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml)
-* [GitHub](https://github.com/github/objective-c-conventions)
-* [Adium](https://trac.adium.im/wiki/CodingStyle)
-* [Sam Soffes](https://gist.github.com/soffes/812796)
-* [CocoaDevCentral](http://cocoadevcentral.com/articles/000082.php)
-* [Luke Redpath](http://lukeredpath.co.uk/blog/2011/06/28/my-objective-c-style-guide/)
-* [Marcus Zarra](http://www.cimgf.com/zds-code-style-guide/)
-* [Wikimedia](https://www.mediawiki.org/wiki/Wikimedia_Apps/Team/iOS/ObjectiveCStyleGuide)
+1. ApplicationViewControllers
+    a. SampleViewController .swift/.h+.m
+        i. SettingViewController .swift/.h+.m
+        ii. Trasitions
+        iii. Views
+        iv. Cells
+    b. Settings
+        i. SettingViewController
+            1. SettingViewController .swift/.h+.m
+            2. Views
+            3. Cells
+        ii. SettingTwoViewController
+            1. SettingTwoViewController .swift/.h+.m
+            2. Views
+            3. Cells
+2. GenericViewControllers
+    a. BaseViewController
+        i. BaseViewController .swift/.h+.m
+        ii. Views
+        iii. Cells
+3. GenericViews
+    a. RoundedView
+        i. RoundedView .swift/.h+.m
+4. GenericObjects
+5. Networking
+    a. API
+    b. Sockets
+6. Data Base
+7. Helpers
+    a. Categories
+    b. Extensions
+    c. Libraries
+8. Supporting Files
+    a. Fonts
+9. Resources
