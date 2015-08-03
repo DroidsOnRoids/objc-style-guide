@@ -1,6 +1,6 @@
 # DroidsOnRoids Objective-C Style Guide
 
-This style guide outlines the coding conventions of the iOS teams at Droids On Roids. 
+This style guide outlines the coding conventions of the iOS teams at Droids On Roids.
 
 ## Introduction
 
@@ -96,7 +96,7 @@ The ternary operator, `?` , should only be used when it increases clarity or cod
 
 **For example:**
 ```objc
-result = a > b ? x : y;
+result = (a > b) ? x : y;
 ```
 
 **Not:**
@@ -161,7 +161,7 @@ Property definitions should be used in place of naked instance variables wheneve
 ```objc
 @interface DORSection: NSObject
 
-@property (nonatomic) NSString *headline;
+@property (strong, nonatomic) NSString *headline;
 
 @end
 ```
@@ -176,7 +176,7 @@ Property definitions should be used in place of naked instance variables wheneve
 
 #### Variable Qualifiers
 
-When it comes to the variable qualifiers [introduced with ARC](https://developer.apple.com/library/ios/releasenotes/objectivec/rn-transitioningtoarc/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011226-CH1-SW4), the qualifier (`__strong`, `__weak`, `__unsafe_unretained`, `__autoreleasing`) should be placed between the asterisks and the variable name, e.g., `NSString * __weak text`. 
+When it comes to the variable qualifiers [introduced with ARC](https://developer.apple.com/library/ios/releasenotes/objectivec/rn-transitioningtoarc/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011226-CH1-SW4), the qualifier (`__strong`, `__weak`, `__unsafe_unretained`, `__autoreleasing`) should be placed first, before the asterisks and the variable name, e.g., `__weak NSString *text`.
 
 ## Naming
 
@@ -263,7 +263,11 @@ Block comments should generally be avoided, as code should be as self-documentin
 
 ```objc
 NSArray *names = @[@"Brian", @"Matt", @"Chris", @"Alex", @"Steve", @"Paul"];
-NSDictionary *productManagers = @{@"iPhone" : @"Kate", @"iPad" : @"Kamal", @"Mobile Web" : @"Bill"};
+NSDictionary *productManagers = @{
+                                  @"iPhone" : @"Kate",
+                                  @"iPad" : @"Kamal",
+                                  @"Mobile Web" : @"Bill"
+                                  };
 NSNumber *shouldUseLiterals = @YES;
 NSNumber *buildingZIPCode = @10018;
 ```
@@ -361,10 +365,10 @@ When working with bitmasks, use the `NS_OPTIONS` macro.
 
 ```objc
 typedef NS_OPTIONS(NSUInteger, DORAdCategory) {
-  DORAdCategoryAutos      = 1 << 0,
-  DORAdCategoryJobs       = 1 << 1,
-  DORAdCategoryRealState  = 1 << 2,
-  DORAdCategoryTechnology = 1 << 3
+    DORAdCategoryAutos      = 1 << 0,
+    DORAdCategoryJobs       = 1 << 1,
+    DORAdCategoryRealState  = 1 << 2,
+    DORAdCategoryTechnology = 1 << 3
 };
 ```
 
