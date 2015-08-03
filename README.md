@@ -130,7 +130,6 @@ Some of Apple’s APIs write garbage values to the error parameter (if non-NULL)
 ## Methods
 
 In method signatures, there should be a space after the scope (`-` or `+` symbol). There should be a space between the method segments.
-There should be no more than 4 params.
 
 **For example:**
 ```objc
