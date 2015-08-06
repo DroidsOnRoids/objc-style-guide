@@ -65,6 +65,12 @@ if (user.isHappy) {
 ```
 * There should be exactly one blank line between methods to aid in visual clarity and organization.
 * Whitespace within methods should be used to separate functionality (though often this can indicate an opportunity to split the method into several, smaller methods). In methods with long or verbose names, a single line of whitespace may be used to provide visual separation before the method’s body.
+* There should be no whitespaces between parameter's name and its value.
+
+**For example:**
+```objc
+[self executeMethodWithNumberParameter:@10];
+```
 * `@synthesize` and `@dynamic` should each be declared on new lines in the implementation.
 
 ## Conditionals
