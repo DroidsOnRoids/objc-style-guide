@@ -476,6 +476,10 @@ Note: For modules use the [@import](http://clang.llvm.org/docs/Modules.html#usin
 // Views
 #import "DORButton.h"
 #import "DORUserView.h"
+
+// View Controllers
+#import "DORViewController.h"
+#import "DORDetailViewController.h"
 ```
 
 ## Xcode project
